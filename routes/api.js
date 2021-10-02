@@ -34,24 +34,24 @@ router.post('/api/workouts', function(req, res){
 });
 
 
-// router.get("/api/workouts/range", (req, res) => {
-//     Workout.aggregate([{ 
-//        "$sort" : { day : -1} 
-//     },
-//     { 
-//         "$limit" : 7 
-//     },
-//     {
-//         "$addFields": {
-//             "totalDuration": {
-//                 "$sum": "$exercises.duration"
-//             }
-//         }
-// }]).then((result) => {
-//         console.log(result);
-//         res.json(result)
-//     })
-// });
+router.get("/api/workouts/range", (req, res) => {
+    Workout.aggregate([{ 
+       "$sort" : { day : -1} 
+    },
+    { 
+        "$limit" : 7 
+    },
+    {
+        "$addFields": {
+            "totalDuration": {
+                "$sum": "$exercises.duration"
+            }
+        }
+}]).then((result) => {
+        console.log(result);
+        res.json(result)
+    })
+});
 
 module.exports = router;
 
