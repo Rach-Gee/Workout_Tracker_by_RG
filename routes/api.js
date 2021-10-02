@@ -26,14 +26,27 @@ router.put('/api/workouts/:id', function(req, res){
 
 });
 
-router.post('/api/workouts/', function(req, res){
+router.post('/api/workouts', function(req, res){
     Workout.create({})
     .then((created) => {
         res.json(created);
     })
 });
 
-module.exports = router;
+
+router.get("/api/workouts/range", (req, res) => {
+    Workout.aggregate([{
+            "$addFields": {
+                "totalDuration": {
+                    "$sum": "$exercises.duration"
+                }
+            }
+    }]).then((result) => {
+        console.log(result);
+        res.json(result)
+    })
+});
 
 module.exports = router;
+
 
