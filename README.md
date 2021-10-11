@@ -21,7 +21,9 @@ Welcome to your personal workout tracker! This app was deployed to help you keep
 ## Installation
        
 To utalise this app navigate to https://enigmatic-coast-49120.herokuapp.com/.
-       
+
+![image](https://user-images.githubusercontent.com/83891242/136776700-c96fbe70-eaab-4685-95f2-e2adee7aed63.png)
+
 ## Usage
        
 Once you are on the page, you can add a new workout or continue with one you have already started. You can toggle to the dashboard where your last 7 works outs are easily displayed to track your progress. 
